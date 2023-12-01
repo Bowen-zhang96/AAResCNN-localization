@@ -179,17 +179,18 @@ for scenario in scenarios:
     # check for bad channels (channels with corrupt data)
     bad_samples = sio.loadmat("C:/code_new/mamimo_measurements_matlab/bad_channels_" + scenario + ".mat")['bad_channels']
     # buils array with all valid channel indices
-    IDs_all = []
-    for x in range(num_samples):
-        if x not in bad_samples:
-            IDs_all.append(x)
-    IDs_all = np.array(IDs_all)
-    # shuffle the indices with fixed seed
-    np.random.seed(64)
-    np.random.shuffle(IDs_all)
 
-
+    # Generate the train/test dataset with random sampling
+    # IDs_all = []
+    # for x in range(num_samples):
+    #     if x not in bad_samples:
+    #         IDs_all.append(x)
+    # IDs_all = np.array(IDs_all)
+    # # shuffle the indices with fixed seed
+    # np.random.seed(64)
+    # np.random.shuffle(IDs_all)
     # IDs=IDs[:2000]
+
     IDs = sio.loadmat('ULA_test.mat')['ID']  # 2000
     IDs = IDs[0]
 
@@ -233,7 +234,8 @@ for scenario in scenarios:
 
         mc = ModelCheckpoint('bestmodels/best_model_ifft_' + scenario + '_' + str(num_antenna) + '_1000.h5', monitor='val_dist', mode='min', verbose=1, save_best_only=True)
 
-        # I decayed learning rate every 200 epochs, but I found the results could be better if changing 200 to 400 after paper submission
+        # I decayed learning rate every 200 epochs in original paper,
+        # but I found the results could be better if changing 200 to 400 after paper submission
         def schedule(epoch):
             if epoch%400==0 and epoch>0:
                 lr=K.get_value(nn.optimizer.lr)
