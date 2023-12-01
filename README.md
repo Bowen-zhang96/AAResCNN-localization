@@ -8,5 +8,5 @@ However, I have no right to distribute this dataset. Please follow the instructi
 ## Architecture
 The paper consists of three parts, positioning, tracking, and IMU-aided tracking. I will gradually update the code for each part.
 
-##Acknowledge 
+## Acknowledge 
 The code is developped based on [this project](https://github.com/sibrendebast/MaMIMO-CSI-positioning-using-CNNs)
