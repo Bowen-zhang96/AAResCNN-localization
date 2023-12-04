@@ -12,5 +12,5 @@ The paper consists of three parts, positioning, tracking, and IMU-aided tracking
 The code is developped based on [this project](https://github.com/sibrendebast/MaMIMO-CSI-positioning-using-CNNs)
 
 ## Additional information
-If you find the source code is useful for your research, please cite our paper:
+If you find the source code is useful for your research, please cite our paper:  
 B. Zhang, H. Sifaou and G. Y. Li, "CSI-Fingerprinting Indoor Localization via Attention-Augmented Residual Convolutional Neural Network," in IEEE Transactions on Wireless Communications, vol. 22, no. 8, pp. 5583-5597, Aug. 2023, doi: 10.1109/TWC.2023.3235449.
